@@ -39,6 +39,10 @@ nav li {
     margin: 0 1.5rem;
 }
 
+.menue-bar:hover {
+    text-decoration: underline;
+}
+
 
 nav ul {
     display: flex;
@@ -486,12 +490,19 @@ nav ul {
     border: 0.1em solid #000;
 }
 
-.specific-description p {
-    margin-right: 20%;
+.specific-description {
+    margin: 0;
 }
 
 .price-description {
     font-weight: bold;
+    margin-top: 30px;
+    text-decoration: underline;
+    color: brown;
+}
+
+.cta-cart {
+    color: aquamarine;
 }
 
 label {
@@ -505,9 +516,21 @@ label {
 /* Media Queries */
 
 
-@media (max-width: 600px) {
+@media (max-width: 550px) {
     .outdoor, .hiking, .water-sports, .climbing {
         grid-template-columns: auto;
         grid-gap: 30px;
+    }
+}
+
+@media (max-width: 1220px) {
+    .jacket-specific-container {
+        grid-template-columns: auto;
+    }
+}
+
+@media (max-width: 425px) {
+    .cta-cart {
+        padding: 0.6em 1.9em;
     }
 }
