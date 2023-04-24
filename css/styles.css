@@ -21,7 +21,7 @@ header {
 }
 
 .logo-header {
-    padding: 2rem;
+    padding: 1rem;
 }
 
 .logo-header a {
@@ -230,10 +230,14 @@ nav ul {
     font-size: 1.2em;  
 }
 
-.outdoor p {
+.outdoor-title {
+    text-align: center;
+    display: contents;
+}
+
+.outdoor-title span {
     font-size: 0.9em;
     font-weight: 100;
-    margin-bottom: 5%;
     text-decoration: underline;
 }
 
@@ -261,6 +265,17 @@ nav ul {
     margin-bottom: 5%;
 }
 
+.hiking-title {
+    text-align: center;
+    display: contents;
+}
+
+.hiking-title span {
+    font-size: 0.9em;
+    font-weight: 100;
+    text-decoration: underline;
+}
+
 .hiking img {
     width: 65%;
 }
@@ -284,6 +299,17 @@ nav ul {
     font-size: 0.9em;
     font-weight: 100;
     margin-bottom: 5%;
+}
+
+.climbing-title {
+    text-align: center;
+    display: contents;
+}
+
+.climbing-title span {
+    font-size: 0.9em;
+    font-weight: 100;
+    text-decoration: underline;
 }
 
 .climbing img {
@@ -311,6 +337,17 @@ nav ul {
     margin-bottom: 5%;
 }
 
+.water-sports-title {
+    text-align: center;
+    display: contents;
+}
+
+.water-sports-title span {
+    font-size: 0.9em;
+    font-weight: 100;
+    text-decoration: underline;
+}
+
 .water-sports img {
     width: 65%;
 }
@@ -331,6 +368,10 @@ nav ul {
 
 .product-box h3 {
     font-weight: 300;
+}
+
+.product-box:hover {
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.8);
 }
 
 /* About us */
@@ -428,9 +469,6 @@ nav ul {
     border: 1px solid #000;
 }
 
-.cta-purchase {
-    position: right;
-}
 
 
 
@@ -440,7 +478,7 @@ nav ul {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 1rem;
-    margin: 8rem;
+    margin: 5rem;
 }
 
 .specific-img img {
@@ -461,4 +499,15 @@ label {
     text-align: center;
     margin-top: 2em;
     color: #0A3641;
-    font-family: 'Inria Sans', sans-serif;    
+    font-family: 'Inria Sans', sans-serif;
+}
+    
+/* Media Queries */
+
+
+@media (max-width: 600px) {
+    .outdoor, .hiking, .water-sports, .climbing {
+        grid-template-columns: auto;
+        grid-gap: 30px;
+    }
+}
