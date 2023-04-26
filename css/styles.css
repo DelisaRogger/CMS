@@ -32,6 +32,7 @@ header {
 a {
     text-decoration: none;
     color: #0A3641;
+    padding: 0.5em 0.5em 0.5em 0;
 }
 
 
@@ -39,8 +40,8 @@ nav li {
     margin: 0 1.5rem;
 }
 
-.menue-bar:hover {
-    text-decoration: underline;
+.fa-solid:hover {
+    color: rgb(54, 99, 22);
 }
 
 
@@ -433,7 +434,7 @@ nav ul {
  }
 
  .product-info {
-    background: #a5a4a4;
+    background: #ddd;
  }
 
  .product-info h2, .product-info ul {
@@ -516,10 +517,14 @@ label {
 /* Media Queries */
 
 
-@media (max-width: 550px) {
+@media (max-width: 650px) {
     .outdoor, .hiking, .water-sports, .climbing {
         grid-template-columns: auto;
         grid-gap: 30px;
+    }
+
+    .about-us p {
+        padding: 0 10%;
     }
 }
 
