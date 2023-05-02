@@ -91,15 +91,16 @@ nav ul {
     text-align: center;
 }
 .welcome img {
-    max-width: 50%;
+    max-width: 35%;
     height: auto;
     display: block;
-    margin: 10% auto;
+    margin: 5% auto;
     padding: 0;
 }
 
 .welcome h2 {
-    padding: 40px;
+    margin: 60px;
+    font-size: 20px;
 }
 
 .footer-one ul {
@@ -149,7 +150,8 @@ nav ul {
 }
 
 .brands li {
-    margin-right: 2rem;
+    margin-right: 0;
+    padding: 10px;
 }
 
 /* Contact us */
@@ -240,7 +242,7 @@ nav ul {
     display: contents;
 }
 
-.outdoor-title span {
+.view-more {
     font-size: 0.9em;
     font-weight: 100;
     text-decoration: underline;
@@ -503,7 +505,7 @@ nav ul {
 }
 
 .cta-cart {
-    color: aquamarine;
+
 }
 
 label {
@@ -525,6 +527,11 @@ label {
 
     .about-us p {
         padding: 0 10%;
+    }
+
+    .welcome img {
+        max-width: 50%;
+        margin: 15% auto;
     }
 }
 
