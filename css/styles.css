@@ -1,4 +1,8 @@
-body {
+ * {
+    box-sizing: border-box;
+ }
+ 
+ body {
     margin: 0;
     padding: 0;
     line-height: 1.6;
@@ -8,7 +12,6 @@ body {
     background-size: cover;
     max-width: 100%;
 }
-
 
 header {
     display: flex;
@@ -179,7 +182,7 @@ nav ul {
     place-items: center;
     grid-template-columns: 1fr;
     grid-gap: 1em;
-    margin: 1em;
+    margin: 3em 0 auto;
 }
 
 .form label {
@@ -191,7 +194,7 @@ nav ul {
 }
 
 .form input[type="name"]{
-    width: 50%;
+    width: 70%;
     padding: 0.5em;
     font-size: 1em;
     border: 1px solid #0A3641;
@@ -199,7 +202,7 @@ nav ul {
 }
 
 .form textarea {
-    width: 50%;
+    width: 70%;
     height: 100%;
     padding: 0.5em;
     font-size: 1em;
@@ -209,7 +212,7 @@ nav ul {
 }
 
 .form select {
-    width: 50%;
+    width: 70%;
     padding: 0.5em;
     font-size: 1em;
     border: 1px solid #0A3641;
@@ -387,7 +390,7 @@ nav ul {
     text-align: center;
 }
 .about-us img {
-    max-width: 50%;
+    max-width: 40%;
     height: auto;
     display: block;
     margin: 3% auto;
@@ -395,8 +398,8 @@ nav ul {
 }
 
 .about-us p {
-    padding: 0 25%;
-    margin-bottom: 5%;  
+    padding: 0 30% 5%;
+ 
 }
 
 /* Check-out-success */
@@ -406,11 +409,11 @@ nav ul {
 }
 
 .success h1 {
-    font-size: 80px;
+    font-size: 60px;
 }
 
 .success h2 {
-    font-size: 30px;
+    font-size: 25px;
 }
 
 .success h3 {
@@ -419,24 +422,22 @@ nav ul {
 
 /* Check-out */
 
- * {
-    box-sizing: border-box;
- }
-
  .container-check {
     max-width: 100% ;
     margin-left: auto;
     margin-right: auto;
-    padding: 5em;
+    padding: 5em 12em;
  }
 
  .product-info ul {
     list-style: none;
     padding: 0;
+    line-height: 3;
  }
 
  .product-info {
     background: #ddd;
+    border: 1px solid #000;
  }
 
  .product-info h2, .product-info ul {
@@ -444,22 +445,27 @@ nav ul {
     margin: 0 0 1rem 0;
  }
 
+ .total {
+    text-decoration: underline;
+    font-weight: bold;
+ }
+
  .checkouttitle {
     text-align: center ;
  }
 
  .check-out-box > * {
-    padding: 1em;
+    padding: 2.5em 1em;
  }
 
  .shipping-form form {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-gap: 20px
+    grid-gap: 50px
  }
 
  .shipping-form label {
-    display: block;
+    display: none;
  }
 
  .shipping-form p {
@@ -470,13 +476,17 @@ nav ul {
     grid-column: 1 / 3;
  }
 
+ .cta-purchase {
+    display: grid;
+    grid-column: 1 / 3;
+    margin: auto;
+ }
+
 .shipping-form, .shipping-form input {
     width: 100%;
     padding: 1em;
     border: 1px solid #000;
 }
-
-
 
 
 /* Jacket specific */
@@ -509,15 +519,23 @@ nav ul {
 }
 
 label {
-    font-weight: bold;
-    text-align: center;
-    margin-top: 2em;
-    color: #0A3641;
-    font-family: 'Inria Sans', sans-serif;
+    display: none;
 }
     
 /* Media Queries */
 
+@media (max-width: 1220px) {
+    .jacket-specific-container {
+        grid-template-columns: auto;
+    }
+}
+
+@media  (max-width: 900px) {
+    .container-check {
+        padding: 4em;
+    }
+    
+}
 
 @media (max-width: 650px) {
     .outdoor, .hiking, .water-sports, .climbing {
@@ -526,7 +544,15 @@ label {
     }
 
     .about-us p {
-        padding: 0 10%;
+        padding: 0 15% 5%;
+    }
+
+    .about-us img {
+        max-width: 60%;
+    }
+
+    .contact p {
+        margin: 10%;
     }
 
     .welcome img {
@@ -535,14 +561,28 @@ label {
     }
 }
 
-@media (max-width: 1220px) {
-    .jacket-specific-container {
-        grid-template-columns: auto;
-    }
-}
-
 @media (max-width: 425px) {
     .cta-cart {
         padding: 0.6em 1.9em;
+    }
+
+    .menue-bar {
+        display: none;
+    }
+
+    .container-check {
+        padding: 3em;
+    }
+
+    .shipping-form form {
+        grid-gap: 20px;
+        }
+    }
+
+
+@media (min-width: 1200px) {
+    .check-out-box {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
     }
 }
