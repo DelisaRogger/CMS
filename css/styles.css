@@ -9,9 +9,12 @@
     font-family: 'Inria Sans', sans-serif;
     color: #0A3641;
     background-color: #EBEFF4;
-    background-size: cover;
     max-width: 100%;
-    background-image: url('../pictures/bg_home_man.jpg');
+ }
+
+ .home, .bg-thanks {
+    background-image: url('../pictures/bg_home_man.jpg');    
+    background-size: cover;
  }
 
 header {
@@ -360,7 +363,7 @@ nav ul {
 }
 
 .success h3 {
-    padding: 50px 150px 0 150px;
+    padding: 50px;
 }
 
 /* About us */
