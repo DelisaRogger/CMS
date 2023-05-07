@@ -11,7 +11,8 @@
     background-color: #EBEFF4;
     background-size: cover;
     max-width: 100%;
-}
+    background-image: url('../pictures/bg_home_man.jpg');
+ }
 
 header {
     display: flex;
@@ -24,7 +25,7 @@ header {
 }
 
 .logo-header {
-    padding: 1rem;
+    padding: 20px;
 }
 
 .logo-header a {
@@ -84,7 +85,7 @@ nav ul {
     padding: 0.6em 4em;
     border-radius: 1em;
     border: 0.2em solid #0A3641;
-    margin: 6.25em;
+    margin: 4.5em;
 }
 
 .cta:hover {
@@ -426,7 +427,7 @@ nav ul {
     max-width: 100% ;
     margin-left: auto;
     margin-right: auto;
-    padding: 5em 12em;
+    padding: 5em 5em;
  }
 
  .product-info ul {
@@ -515,6 +516,7 @@ nav ul {
 }
 
 .cta-cart {
+    margin: 20px auto;
 
 }
 
@@ -566,17 +568,21 @@ label {
         padding: 0.6em 1.9em;
     }
 
-    .menue-bar {
-        display: none;
-    }
-
     .container-check {
         padding: 3em;
     }
 
     .shipping-form form {
-        grid-gap: 20px;
+        grid-gap: 40px;
         }
+
+    nav ul {
+        padding: 0 0 0 75px;
+    }
+
+    .logo-header {
+        padding: 20px 0 20px 130px;
+    }
     }
 
 
