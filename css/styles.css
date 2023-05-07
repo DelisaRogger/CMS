@@ -29,7 +29,7 @@ header {
 }
 
 .logo-header a {
-    font-size: 150%;
+    font-size: 25px;
     font-weight: bold;
 }
 
@@ -44,11 +44,6 @@ nav li {
     margin: 0 1.5rem;
 }
 
-.fa-solid:hover {
-    color: rgb(54, 99, 22);
-}
-
-
 nav ul {
     display: flex;
     justify-content: space-between;
@@ -56,23 +51,6 @@ nav ul {
     padding: 0;
     list-style: none;
     
-}
-
-.box {
-    border: 3px solid black;
-}
-
-.line {
-    border-bottom: 4px solid #0A3641;
-    display: block;
-    display: block;
-    width: 50%;
-    margin: 0 25%;
-    border-radius: 70%;
-}
-
-.bg_summary_box {
-    border: 1px solid lightgrey;
 }
 
 .cta {
@@ -98,7 +76,7 @@ nav ul {
     max-width: 35%;
     height: auto;
     display: block;
-    margin: 5% auto;
+    margin: 50px auto;
     padding: 0;
 }
 
@@ -131,8 +109,8 @@ nav ul {
 .footer-box {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    grid-gap: 1rem;
-    margin-left: 2rem;
+    grid-gap: 10px;
+    margin-left: 25px;
   }
 .footer-one {
     grid-column: 1;
@@ -182,42 +160,24 @@ nav ul {
     display: grid;
     place-items: center;
     grid-template-columns: 1fr;
-    grid-gap: 1em;
-    margin: 3em 0 auto;
+    grid-gap: 10px;
 }
 
 .form label {
     font-weight: bold;
     text-align: center;
-    margin-top: 2em;
+    margin-top: 20px;
     color: #0A3641;
     font-family: 'Inria Sans', sans-serif;    
 }
 
-.form input[type="name"]{
+.form input[type="name"], .form textarea, .form select {
     width: 70%;
-    padding: 0.5em;
+    padding: 10px;
     font-size: 1em;
     border: 1px solid #0A3641;
     border-radius: 0.25em;
-}
-
-.form textarea {
-    width: 70%;
-    height: 100%;
-    padding: 0.5em;
-    font-size: 1em;
     font-family: 'Inria Sans', sans-serif;    
-    border: 1px solid #0A3641;
-    border-radius: 0.25em;
-}
-
-.form select {
-    width: 70%;
-    padding: 0.5em;
-    font-size: 1em;
-    border: 1px solid #0A3641;
-    border-radius: 0.25em;
 }
 
 .form {
@@ -226,7 +186,7 @@ nav ul {
 
 /* Jackets */
 
-.outdoor {
+.outdoor, .hiking, .climbing, .water-sports {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     margin: 4em auto;
@@ -234,145 +194,38 @@ nav ul {
     grid-gap: 10px;
 }
 
-.outdoor h2, .outdoor p {
+.outdoor h2, .outdoor p, .hiking h2, .hiking p, .climbing h2, .climbing p, .water-sports h2, .water-sports p {
     grid-column: -1/ 1;
     margin: 3px;
     font-family: 'Inria Sans', sans-serif; 
-    font-size: 1.2em;  
+    font-size: 20px;  
 }
 
-.outdoor-title {
+.outdoor-title, .hiking-title, .climbing-title, .water-sports-title {
     text-align: center;
     display: contents;
 }
 
 .view-more {
-    font-size: 0.9em;
+    font-size: 15px;
     font-weight: 100;
     text-decoration: underline;
 }
 
-.outdoor img {
-    width: 65%;
-}
-
-.hiking {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    margin: 4em auto;
-    max-width: 1000px;
-    grid-gap: 10px;
-}
-.hiking h2, .hiking p {
-    grid-column: -1/ 1;
-    margin: 3px;
-    font-family: 'Inria Sans', sans-serif; 
-    font-size: 1.2em;       
-}
-
-.hiking p {
-    font-size: 0.9em;
-    font-weight: 100;
-    margin-bottom: 5%;
-}
-
-.hiking-title {
-    text-align: center;
-    display: contents;
-}
-
-.hiking-title span {
-    font-size: 0.9em;
-    font-weight: 100;
-    text-decoration: underline;
-}
-
-.hiking img {
-    width: 65%;
-}
-
-.climbing {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    margin: 4em auto;
-    max-width: 1000px;
-    grid-gap: 10px;
-}
-
-.climbing h2, .climbing p {
-    grid-column: -1/ 1;
-    margin: 3px;
-    font-family: 'Inria Sans', sans-serif;
-    font-size: 1.2em;        
-}
-
-.climbing p {
-    font-size: 0.9em;
-    font-weight: 100;
-    margin-bottom: 5%;
-}
-
-.climbing-title {
-    text-align: center;
-    display: contents;
-}
-
-.climbing-title span {
-    font-size: 0.9em;
-    font-weight: 100;
-    text-decoration: underline;
-}
-
-.climbing img {
-    width: 65%;
-}
-
-.water-sports {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    margin: 4em auto;
-    max-width: 1000px;
-    grid-gap: 10px;
-}
-
-.water-sports h2, .water-sports p {
-    grid-column: -1/ 1;
-    margin: 3px;
-    font-family: 'Inria Sans', sans-serif;
-    font-size: 1.2em;    
-}
-
-.water-sports p {
-    font-size: 0.9em;
-    font-weight: 100;
-    margin-bottom: 5%;
-}
-
-.water-sports-title {
-    text-align: center;
-    display: contents;
-}
-
-.water-sports-title span {
-    font-size: 0.9em;
-    font-weight: 100;
-    text-decoration: underline;
-}
-
-.water-sports img {
+.outdoor img, .hiking img, .climbing img, .water-sports img {
     width: 65%;
 }
 
 .product-box {
     border: 3px solid black;
-    border-radius: 0.2em;
-    margin: 0 10%;
+    border-radius: 10px;
+    margin: 0 40px;
     text-align: center;
     background-color: #fff;
 }
 
 .product-box p {
-    font-size: 1em;
+    font-size: 17px;
     font-weight: bold;
     color: black;
 }
@@ -385,40 +238,43 @@ nav ul {
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.8);
 }
 
-/* About us */
-
-.about-us {
-    text-align: center;
-}
-.about-us img {
-    max-width: 40%;
-    height: auto;
+.line {
+    border-bottom: 4px solid #0A3641;
     display: block;
-    margin: 3% auto;
-    padding: 0;
+    display: block;
+    width: 50%;
+    margin: 0 25%;
+    border-radius: 70%;
 }
 
-.about-us p {
-    padding: 0 30% 5%;
- 
+/* Jacket specific */
+
+.jacket-specific-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    margin: 50px;
 }
 
-/* Check-out-success */
-
-.success {
-    text-align: center;
+.specific-img img {
+    max-width: 100%;
+    border: 1px solid #000;
 }
 
-.success h1 {
-    font-size: 60px;
+.specific-description {
+    margin: 0;
 }
 
-.success h2 {
-    font-size: 25px;
+.price-description {
+    font-weight: bold;
+    margin-top: 30px;
+    text-decoration: underline;
+    color: brown;
 }
 
-.success h3 {
-    padding: 5% 25% 0 25%;
+.cta-cart {
+    margin: 30px auto;
+
 }
 
 /* Check-out */
@@ -427,7 +283,7 @@ nav ul {
     max-width: 100% ;
     margin-left: auto;
     margin-right: auto;
-    padding: 5em 5em;
+    padding: 50px 50px;
  }
 
  .product-info ul {
@@ -443,7 +299,7 @@ nav ul {
 
  .product-info h2, .product-info ul {
     text-align: left;
-    margin: 0 0 1rem 0;
+    margin: 0 0 10px 0;
  }
 
  .total {
@@ -456,7 +312,7 @@ nav ul {
  }
 
  .check-out-box > * {
-    padding: 2.5em 1em;
+    padding: 25px 10px;
  }
 
  .shipping-form form {
@@ -485,43 +341,44 @@ nav ul {
 
 .shipping-form, .shipping-form input {
     width: 100%;
-    padding: 1em;
+    padding: 12px;
     border: 1px solid #000;
 }
 
+/* Check-out-success */
 
-/* Jacket specific */
-
-.jacket-specific-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 1rem;
-    margin: 5rem;
+.success {
+    text-align: center;
 }
 
-.specific-img img {
-    max-width: 100%;
-    border: 0.1em solid #000;
+.success h1 {
+    font-size: 60px;
 }
 
-.specific-description {
-    margin: 0;
+.success h2 {
+    font-size: 25px;
 }
 
-.price-description {
-    font-weight: bold;
-    margin-top: 30px;
-    text-decoration: underline;
-    color: brown;
+.success h3 {
+    padding: 50px 150px 0 150px;
 }
 
-.cta-cart {
-    margin: 20px auto;
+/* About us */
 
+.about-us {
+    text-align: center;
+}
+.about-us img {
+    max-width: 40%;
+    height: auto;
+    display: block;
+    margin: 3% auto;
+    padding: 0;
 }
 
-label {
-    display: none;
+.about-us p {
+    padding: 0 30% 5%;
+ 
 }
     
 /* Media Queries */
@@ -532,11 +389,17 @@ label {
     }
 }
 
+@media (min-width: 1200px) {
+    .check-out-box {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+    }
+}
+
 @media  (max-width: 900px) {
     .container-check {
-        padding: 4em;
-    }
-    
+        padding: 40px;
+    }   
 }
 
 @media (max-width: 650px) {
@@ -558,18 +421,15 @@ label {
     }
 
     .welcome img {
-        max-width: 50%;
-        margin: 15% auto;
+        max-width: 250px;
+        margin: 70px auto;
     }
 }
 
 @media (max-width: 425px) {
-    .cta-cart {
-        padding: 0.6em 1.9em;
-    }
 
     .container-check {
-        padding: 3em;
+        padding: 40px;
     }
 
     .shipping-form form {
@@ -582,13 +442,5 @@ label {
 
     .logo-header {
         padding: 20px 0 20px 130px;
-    }
-    }
-
-
-@media (min-width: 1200px) {
-    .check-out-box {
-        display: grid;
-        grid-template-columns: 1fr 2fr;
     }
 }
