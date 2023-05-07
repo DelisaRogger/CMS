@@ -171,7 +171,7 @@ nav ul {
     font-family: 'Inria Sans', sans-serif;    
 }
 
-.form input[type="name"], .form textarea, .form select {
+.form input[type="text"], .form textarea, .form select {
     width: 70%;
     padding: 10px;
     font-size: 1em;
