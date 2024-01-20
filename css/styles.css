@@ -215,8 +215,8 @@ nav ul {
     text-decoration: underline;
 }
 
-.outdoor img, .hiking img, .climbing img, .water-sports img {
-    width: 65%;
+.product-img {
+    max-width: 100%;
 }
 
 .product-box {
@@ -227,7 +227,7 @@ nav ul {
     background-color: #fff;
 }
 
-.product-box p {
+.price {
     font-size: 17px;
     font-weight: bold;
     color: black;
