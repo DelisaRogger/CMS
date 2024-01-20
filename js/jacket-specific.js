@@ -29,5 +29,6 @@ function createHtml(details) {
         <h1>${details.title}</h1>
         <p>${details.description}</p>
         <p class="price-description">$${details.price}</p>
+        <a href="check_out.html" class="cta cta-cart">Add to cart</a>
     `;
 }
