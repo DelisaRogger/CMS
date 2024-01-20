@@ -25,7 +25,7 @@ fetchDetails();
 
 function createHtml(details) {
     detailContainer.innerHTML = `
-        <img class="product-img" src="${details.image}" alt="${details.title}" />
+        <img class="specific-img" src="${details.image}" alt="${details.title}" />
         <h1>${details.title}</h1>
         <p>${details.description}</p>
         <p class="price-description">$${details.price}</p>
