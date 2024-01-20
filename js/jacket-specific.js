@@ -1,49 +1,33 @@
-import { getQueryStringParam } from "./params.js";
-import { url } from "./constants.js";
+const detailContainer = document.querySelector(".specific-description");
+const queryString = document.location.search;
+const params = new URLSearchParams(queryString);
 
-async function getJacketDetails() {
-    const id = getQueryStringParam("id");
+let id = params.get("id");
 
-    if (!id) {
-        document.location.href = `/`; // Redirect to home if ID is missing
-    }
+const detailUrl = `https://api.noroff.dev/api/v1/rainy-days/${id}`;
 
-    const jacketUrl = `${url}/${id}`;
-
+async function fetchDetails() {
     try {
-        const response = await fetch(jacketUrl);
+        detailContainer.innerHTML = `<div class="loader"></div>`;
+        const response = await fetch(detailUrl);
+        const details = await response.json();
 
-        if (response.ok === false) {
-            throw new Error("There was an error fetching the jacket with id: " + id);
-        }
+        document.title = details.title;
 
-        const jacketDetails = await response.json();
+        createHtml(details);
 
-        const detailContainer = document.querySelector("#jacket-specific-container");
-
-        detailContainer.innerHTML = `<div class="specific-img">
-            <img src="${jacketDetails.image}" alt="${jacketDetails.title}">
-        </div>
-        <div class="specific-description">
-            <h1>${jacketDetails.title}</h1>
-            <p>${jacketDetails.description}</p>
-            <p class="price-description">$${jacketDetails.price}</p>
-            <form class="size">
-                <label for="size">Sizes</label>
-                <select id="size" name="size">
-                    ${jacketDetails.sizes.map(size => `<option value="${size}">${size}</option>`).join('')}
-                </select>
-                <label for="colour">Color</label>
-                <select id="colour" name="colour">
-                    ${jacketDetails.colors.map(color => `<option value="${color}">${color}</option>`).join('')}
-                </select>
-            </form>
-            <a href="check_out.html" class="cta cta-cart">Add to cart</a>
-        </div>`;
     } catch (error) {
-        const detailContainer = document.querySelector("#jacket-specific-container");
-        detailContainer.innerHTML = `<p class="error">${error}Oh no! An error occurred when retrieving the jacket details. It will be fixed asap.</p>`;
+        detailContainer.innerHTML = `<p>Error loading data: ${error.message}</p>`;
     }
 }
 
-getJacketDetails();
+fetchDetails();
+
+function createHtml(details) {
+    detailContainer.innerHTML = `
+        <img class="product-img" src="${details.image}" alt="${details.title}" />
+        <h1>${details.title}</h1>
+        <p>${details.description}</p>
+        <p class="price-description">$${details.price}</p>
+    `;
+}
