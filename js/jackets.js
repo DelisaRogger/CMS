@@ -41,5 +41,5 @@ function callApi(containerId, apiUrl, startIdx, endIdx) {
 
 callApi("outdoor-container", "https://api.noroff.dev/api/v1/rainy-days", 0, 3);
 callApi("hiking-container", "https://api.noroff.dev/api/v1/rainy-days", 3, 6);
-callApi("climbing-container", "https://api.noroff.dev/api/v1/rainy-days/", 6, 9);
-callApi("water-sports-container", "https://api.noroff.dev/api/v1/rainy-days/", 9, 12);
+callApi("climbing-container", "https://api.noroff.dev/api/v1/rainy-days", 6, 9);
+callApi("water-sports-container", "https://api.noroff.dev/api/v1/rainy-days", 9, 12);
