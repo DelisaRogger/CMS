@@ -1,4 +1,3 @@
-
 function callApi(containerId, apiUrl, startIdx, endIdx) {
     const container = document.getElementById(containerId);
     const loader = document.getElementById("loader"); 
@@ -17,9 +16,9 @@ function callApi(containerId, apiUrl, startIdx, endIdx) {
                     container.innerHTML += `
                         <div class="product-box">
                             <a href="jacket-specific.html?id=${product.id}">
-                                <img class="product-img" src="${product.image}" alt="${product.title}" />
-                                <h3>${product.title}</h3>
-                                <p class="price">${product.price}</p>
+                            <img class="product-img" src="${product.image}" alt="${product.title}" />
+                             <h3>${product.title}</h3>
+                            <p class="price">${product.price}</p>
                             </a>
                         </div>
                     `;
