@@ -5,10 +5,12 @@ const params = new URLSearchParams(queryString);
 let id = params.get("id");
 
 const detailUrl = `https://api.noroff.dev/api/v1/rainy-days/${id}`;
+const loader = document.getElementById("loader");
 
 async function fetchDetails() {
     try {
-        detailContainer.innerHTML = `<div class="loader"></div>`;
+        loader.style.display = "block";
+      
         const response = await fetch(detailUrl);
         const details = await response.json();
 
@@ -18,8 +20,13 @@ async function fetchDetails() {
 
     } catch (error) {
         detailContainer.innerHTML = `<p>Error loading data: ${error.message}</p>`;
+
+    } finally {
+      loader.style.display = "none";
     }
+
 }
+
 
 fetchDetails();
 
