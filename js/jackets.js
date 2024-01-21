@@ -31,7 +31,7 @@ function callApi(containerId, apiUrl, startIdx, endIdx) {
             loader.style.display = "none";
         } catch (error) {
             console.error("Error fetching API data:", error);
-            container.innerHTML = "Error fetching data";
+            container.innerHTML = "There sees to be a problem. Please try again later.";
             loader.style.display = "none";
         }
     }

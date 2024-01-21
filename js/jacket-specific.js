@@ -19,8 +19,8 @@ async function fetchDetails() {
         createHtml(details);
 
     } catch (error) {
-        detailContainer.innerHTML = `<p>Error loading data: ${error.message}</p>`;
-
+        detailContainer.innerHTML = `<p>Opps! There seems to be an error loading the product details. Try again later.: ${error.message}</p>`;
+        
     } finally {
       loader.style.display = "none";
     }
