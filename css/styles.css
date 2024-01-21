@@ -1,4 +1,4 @@
- * {
+* {
     box-sizing: border-box;
  }
  
@@ -259,7 +259,7 @@ nav ul {
     margin: 50px;
 }
 
-.specific-img img {
+.specific-img {
     max-width: 100%;
     border: 1px solid #000;
 }
@@ -393,8 +393,8 @@ nav ul {
 }
 
 #loader {
-    border: 16px solid #f3f3f3; /* Light grey */
-    border-top: 16px solid #3498db; /* Blue */
+    border: 16px solid #f3f3f3;
+    border-top: 16px solid #3498db;
     border-radius: 50%;
     width: 80px;
     height: 80px;
@@ -404,8 +404,8 @@ nav ul {
     left: 50%;
     margin-top: -40px;
     margin-left: -40px;
-    display: none; /* Hide initially */
-    z-index: 9999; /* Ensure it's on top of other elements */
+    display: none;
+    z-index: 9999;
 }
 
 @keyframes spin {
