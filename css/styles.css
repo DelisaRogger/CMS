@@ -65,6 +65,22 @@ nav ul {
     width: 60px;
 }
 
+.grid-container {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+margin-bottom: 4.5em;
+margin: 4em 15%;
+max-width: 1000px;
+grid-gap: 0;
+}
+
+.sample {
+    border: 5px solid  #0A3641;
+    text-align: center;
+    margin: 0 20px;
+    background-color: #fff;
+}
+
 .cta {
     background-color: #8AE9D8;
     display: inline-block;
@@ -513,6 +529,12 @@ nav ul {
 
     #back {
         display: none;
+    }
+
+    .grid-container {
+        grid-template-columns: auto;
+        grid-gap: 30px;
+        margin: 4% 10%;
     }
 }
 
