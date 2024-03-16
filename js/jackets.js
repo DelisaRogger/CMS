@@ -38,6 +38,23 @@ function callApi(containerId, apiUrl, startIdx, endIdx) {
     fetchData();
 }
 
+var mybutton = document.getElementById("backToTopBtn");
+
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 60 || document.documentElement.scrollTop > 60) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+}
+
 callApi("outdoor-container", "https://api.noroff.dev/api/v1/rainy-days", 0, 3);
 callApi("hiking-container", "https://api.noroff.dev/api/v1/rainy-days", 3, 6);
 callApi("climbing-container", "https://api.noroff.dev/api/v1/rainy-days", 6, 9);
