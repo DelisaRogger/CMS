@@ -30,7 +30,7 @@ function callApi(containerId, apiUrl, startIdx, endIdx) {
             loader.style.display = "none";
         } catch (error) {
             console.error("Error fetching API data:", error);
-            container.innerHTML = "There sees to be a problem. Please try again later.";
+            container.innerHTML = "There seems to be a problem. Please try again later.";
             loader.style.display = "none";
         }
     }
@@ -43,7 +43,7 @@ var mybutton = document.getElementById("backToTopBtn");
         window.onscroll = function() {scrollFunction()};
 
         function scrollFunction() {
-            if (document.body.scrollTop > 60 || document.documentElement.scrollTop > 60) {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
                 mybutton.style.display = "block";
             } else {
                 mybutton.style.display = "none";

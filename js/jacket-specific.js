@@ -56,3 +56,4 @@ function createSizeOptions() {
   return sizes.map((size, index) => `<option value="${index}">${size}</option>`).join("");
 }
 
+
