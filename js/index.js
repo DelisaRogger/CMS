@@ -1,41 +1,46 @@
-function callApi(containerId, apiUrl, startIdx, endIdx) {
-    const container = document.getElementById(containerId);
-    const loader = document.getElementById("loader");
+async function populateGrid() {
+    try {
+        const response = await fetch("https://api.noroff.dev/api/v1/rainy-days");
+        const data = await response.json();
 
-    async function fetchData() {
-        try {
-            loader.style.display = "block";
+        const gridContainer = document.getElementById("grid-container");
 
-            const response = await fetch(apiUrl);
-            const data = await response.json();
+        if (Array.isArray(data) && data.length >= 3) {
+            for (let i = 0; i < 3; i++) {
+                const item = data[i];
+                const { id, image, title, price } = item;
 
-            if (data && data.length > 0) {
-                const selectedProducts = data.slice(startIdx, endIdx);
+                const itemDiv = document.createElement("div");
+                itemDiv.classList.add("sample");
 
-                selectedProducts.forEach(product => {
-                    container.innerHTML += `
-                        <div class="sample">
-                            <a href="jacket-specific.html?id=${product.id}">
-                                <img src="${product.image}" alt="${product.title}">
-                                <h3>${product.title}</h3>
-                                <p class="price">${product.price}</p>
-                            </a>
-                        </div>
-                    `;
-                });
-            } else {
-                container.innerHTML = "No products available";
+                const img = document.createElement("img");
+                img.src = image;
+                img.alt = title;
+
+                const anchor = document.createElement("a");
+                anchor.href = `jacket-specific.html?id=${id}`;
+
+                const titleElement = document.createElement("h3");
+                titleElement.textContent = title;
+
+                const priceElement = document.createElement("p");
+                priceElement.classList.add("price");
+                priceElement.textContent = price;
+
+                anchor.appendChild(img);
+                anchor.appendChild(titleElement);
+                anchor.appendChild(priceElement);
+
+                itemDiv.appendChild(anchor);
+
+                gridContainer.appendChild(itemDiv);
             }
-
-            loader.style.display = "none";
-        } catch (error) {
-            console.error("Error fetching API data:", error);
-            container.innerHTML = "There seems to be a problem. Please try again later.";
-            loader.style.display = "none";
+        } else {
+            console.error("Insufficient data from API");
         }
+    } catch (error) {
+        console.error("Error fetching data:", error);
     }
-
-    fetchData();
 }
 
-callApi("sample", "https://api.noroff.dev/api/v1/rainy-days", 0, 3);
+populateGrid();
