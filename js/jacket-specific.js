@@ -40,6 +40,12 @@ function createHtml(details) {
         <label for="size-select">Select Size:</label>
             <select id="size-select">${createSizeOptions()}
             </select>
+        <label for="gender">Gender</label>
+            <select id="gender">${details.gender}
+            <option value="empty">-</option>
+            <option value="male">M</option>
+            <option value="female">F</option>
+            </select>
       </div>        
       <a href="check_out.html" class="cta cta-cart">Add to cart</a>
     `;
