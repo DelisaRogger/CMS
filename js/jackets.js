@@ -1,6 +1,6 @@
 function callApi(containerId, apiUrl, startIdx, endIdx) {
-    const container = document.getElementById(containerId);
-    const loader = document.getElementById("loader"); 
+    const container = document.querySelector(`.${containerId}`);
+    const loader = document.getElementById("loader");
 
     async function fetchData() {
         try {
@@ -15,10 +15,10 @@ function callApi(containerId, apiUrl, startIdx, endIdx) {
                 selectedProducts.forEach(product => {
                     container.innerHTML += `
                         <div class="product-box">
-                            <a href="jacket-specific.html?id=${product.id}">
-                            <img class="product-img" src="${product.image}" alt="${product.title}" />
-                             <h3>${product.title}</h3>
-                            <p class="price">${product.price}</p>
+                            <a href="products/jacket-specific.html?id=${product.id}">
+                                <img class="product-img" src="${product.images[0].src}" alt="${product.name}" />
+                                <h3>${product.name}</h3>
+                                <p class="price">$${product.prices.price}</p>
                             </a>
                         </div>
                     `;
@@ -38,24 +38,8 @@ function callApi(containerId, apiUrl, startIdx, endIdx) {
     fetchData();
 }
 
-var mybutton = document.getElementById("backToTopBtn");
-
-        window.onscroll = function() {scrollFunction()};
-
-        function scrollFunction() {
-            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                mybutton.style.display = "block";
-            } else {
-                mybutton.style.display = "none";
-            }
-        }
-
-        function topFunction() {
-            document.body.scrollTop = 0;
-            document.documentElement.scrollTop = 0;
-}
-
-callApi("outdoor-container", "https://api.noroff.dev/api/v1/rainy-days", 0, 3);
-callApi("hiking-container", "https://api.noroff.dev/api/v1/rainy-days", 3, 6);
-callApi("climbing-container", "https://api.noroff.dev/api/v1/rainy-days", 6, 9);
-callApi("water-sports-container", "https://api.noroff.dev/api/v1/rainy-days", 9, 12);
+// Call the API for each section
+callApi("outdoor", "https://cors.noroff.dev/http://rainydelrog.no/rainydays/wp-json/wc/store/products", 0, 3);
+callApi("hiking", "https://cors.noroff.dev/http://rainydelrog.no/rainydays/wp-json/wc/store/products", 3, 6);
+callApi("climbing", "https://cors.noroff.dev/http://rainydelrog.no/rainydays/wp-json/wc/store/products", 6, 9);
+callApi("water-sports", "https://cors.noroff.dev/http://rainydelrog.no/rainydays/wp-json/wc/store/products", 9, 12);
