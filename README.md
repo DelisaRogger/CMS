@@ -12,5 +12,5 @@ My Rainydays website is designed to be a simple and user-friendly jacket store, 
 
 ### See the site here
 
-https://amazing-kringle-5cc483.netlify.app/
+https://rainydelrog-cms.netlify.app/
 
