@@ -6,35 +6,34 @@ async function populateGrid() {
         const gridContainer = document.getElementById("grid-container");
 
         if (Array.isArray(data) && data.length >= 3) {
-            for (let i = 0; i < 3; i++) {
-                const item = data[i];
+            data.slice(0, 3).forEach(item => {
                 const { id, images, name, prices } = item;
 
-                const itemDiv = document.createElement("div");
-                itemDiv.classList.add("sample");
+                const thumbnail = document.createElement("div");
+                thumbnail.classList.add("product");
+
+                const anchor = document.createElement("a");
+                anchor.href = `jacket-specific.html?id=${id}`;
 
                 const img = document.createElement("img");
                 img.src = images[0].src;
                 img.alt = name;
-
-                const anchor = document.createElement("a");
-                anchor.href = `jacket-specific.html?id=${id}`;
 
                 const titleElement = document.createElement("h3");
                 titleElement.textContent = name;
 
                 const priceElement = document.createElement("p");
                 priceElement.classList.add("price");
-                priceElement.textContent = prices.price;
+                priceElement.textContent = `${prices.price}`;
 
                 anchor.appendChild(img);
                 anchor.appendChild(titleElement);
                 anchor.appendChild(priceElement);
 
-                itemDiv.appendChild(anchor);
+                thumbnail.appendChild(anchor);
 
-                gridContainer.appendChild(itemDiv);
-            }
+                gridContainer.appendChild(thumbnail);
+            });
         } else {
             console.error("Insufficient data from API");
         }
