@@ -41,6 +41,9 @@ function createHtml(details) {
         <h1>${details.name}</h1>
         <p>${details.description}</p>
         <p class="price-description">$${details.prices.price}</p>
+        <label for="size-select">Select Size:</label>
+        <select id="size-select">${createSizeOptions()}
+        </select>
         <label for="gender">Gender</label>
             <select id="gender">
             <option value="empty">-</option>
@@ -50,4 +53,9 @@ function createHtml(details) {
       </div>        
       <a href="check_out.html" class="cta cta-cart">Add to cart</a>
     `;
+}
+
+function createSizeOptions() {
+  const sizes = ["XS", "S", "M", "L", "XL", "XXL"];
+  return sizes.map((size, index) => `<option value="${index}">${size}</option>`).join("");
 }
