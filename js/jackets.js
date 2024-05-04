@@ -38,7 +38,23 @@ function callApi(containerId, apiUrl, startIdx, endIdx) {
     fetchData();
 }
 
-// Call the API for each section
+var mybutton = document.getElementById("backToTopBtn");
+
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+}
+
 callApi("water-sports", "https://cors.noroff.dev/http://rainydelrog.no/rainydays/wp-json/wc/store/products", 0, 3);
 callApi("outdoor", "https://cors.noroff.dev/http://rainydelrog.no/rainydays/wp-json/wc/store/products", 3, 6);
 callApi("climbing", "https://cors.noroff.dev/http://rainydelrog.no/rainydays/wp-json/wc/store/products", 6, 9);
