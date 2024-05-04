@@ -39,7 +39,6 @@ function callApi(containerId, apiUrl, startIdx, endIdx) {
 }
 
 // Call the API for each section
-callApi("outdoor", "https://cors.noroff.dev/http://rainydelrog.no/rainydays/wp-json/wc/store/products", 0, 3);
-callApi("hiking", "https://cors.noroff.dev/http://rainydelrog.no/rainydays/wp-json/wc/store/products", 3, 6);
+callApi("water-sports", "https://cors.noroff.dev/http://rainydelrog.no/rainydays/wp-json/wc/store/products", 0, 3);
+callApi("outdoor", "https://cors.noroff.dev/http://rainydelrog.no/rainydays/wp-json/wc/store/products", 3, 6);
 callApi("climbing", "https://cors.noroff.dev/http://rainydelrog.no/rainydays/wp-json/wc/store/products", 6, 9);
-callApi("water-sports", "https://cors.noroff.dev/http://rainydelrog.no/rainydays/wp-json/wc/store/products", 9, 12);
