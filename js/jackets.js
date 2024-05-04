@@ -15,7 +15,7 @@ function callApi(containerId, apiUrl, startIdx, endIdx) {
                 selectedProducts.forEach(product => {
                     container.innerHTML += `
                         <div class="product-box">
-                            <a href="products/jacket-specific.html?id=${product.id}">
+                            <a href="jacket-specific.html?id=${product.id}">
                                 <img class="product-img" src="${product.images[0].src}" alt="${product.name}" />
                                 <h3>${product.name}</h3>
                                 <p class="price">$${product.prices.price}</p>

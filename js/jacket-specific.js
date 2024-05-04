@@ -4,6 +4,10 @@ const params = new URLSearchParams(queryString);
 
 let id = params.get("id");
 
+if (!id) {
+  location.href = "/";
+}
+
 const detailUrl = `https://cors.noroff.dev/http://rainydelrog.no/rainydays/wp-json/wc/store/products/${id}`;
 const loader = document.getElementById("loader");
 
@@ -36,10 +40,7 @@ function createHtml(details) {
       <div class="specific-description">
         <h1>${details.name}</h1>
         <p>${details.description}</p>
-        <p class="price-description">$${details.price}</p>
-        <label for="size-select">Select Size:</label>
-            <select id="size-select">${createSizeOptions()}
-            </select>
+        <p class="price-description">$${details.prices.price}</p>
         <label for="gender">Gender</label>
             <select id="gender">
             <option value="empty">-</option>
