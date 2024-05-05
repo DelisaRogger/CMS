@@ -1,4 +1,4 @@
-async function populateGrid() {
+async function renderProductGrid() {
     try {
         const loader = document.getElementById("loader");
         loader.style.display = "block";
@@ -48,4 +48,4 @@ async function populateGrid() {
     }
 }
 
-populateGrid();
+renderProductGrid();
