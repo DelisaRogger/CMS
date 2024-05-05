@@ -31,7 +31,6 @@ async function fetchDetails() {
 
 }
 
-
 fetchDetails();
 
 function createHtml(details) {

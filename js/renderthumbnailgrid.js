@@ -1,5 +1,8 @@
 async function populateGrid() {
     try {
+        const loader = document.getElementById("loader");
+        loader.style.display = "block";
+
         const response = await fetch("https://cors.noroff.dev/http://rainydelrog.no/rainydays/wp-json/wc/store/products/");
         const data = await response.json();
 
@@ -36,9 +39,12 @@ async function populateGrid() {
         } else {
             console.error("Insufficient data from API");
         }
+
+        loader.style.display = "none";
     } catch (error) {
         console.error("Error fetching data:", error);
-        container.innerHTML = "There seems to be a problem. Please try again later.";
+        loader.style.display = "none";
+        gridContainer.innerHTML = "There seems to be a problem loading the products. Please try again later.";
     }
 }
 

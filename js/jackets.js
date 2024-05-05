@@ -41,7 +41,7 @@ function callApi(categories, apiUrl) {
             console.error("Error fetching API data:", error);
             categories.forEach(category => {
                 const container = document.querySelector(`.${category.containerId}`);
-                container.innerHTML = "There seems to be a problem. Please try again later.";
+                container.innerHTML = "There seems to be a problem loading the products. Please try again later.";
             });
             loader.style.display = "none";
         }
