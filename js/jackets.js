@@ -1,5 +1,4 @@
-function callApi(containerId, apiUrl, startIdx, endIdx) {
-    const container = document.querySelector(`.${containerId}`);
+function callApi(categories, apiUrl) {
     const loader = document.getElementById("loader");
 
     async function fetchData() {
@@ -10,27 +9,40 @@ function callApi(containerId, apiUrl, startIdx, endIdx) {
             const data = await response.json();
 
             if (data && data.length > 0) {
-                const selectedProducts = data.slice(startIdx, endIdx);
+                categories.forEach(category => {
+                    const container = document.querySelector(`.${category.containerId}`);
+                    const selectedProducts = data.slice(category.startIdx, category.endIdx);
 
-                selectedProducts.forEach(product => {
-                    container.innerHTML += `
-                        <div class="product-box">
-                            <a href="jacket-specific.html?id=${product.id}">
-                                <img class="product-img" src="${product.images[0].src}" alt="${product.name}" />
-                                <h3>${product.name}</h3>
-                                <p class="price">$${product.prices.price}</p>
-                            </a>
-                        </div>
-                    `;
+                    if (selectedProducts.length > 0) {
+                        selectedProducts.forEach(product => {
+                            container.innerHTML += `
+                                <div class="product-box">
+                                    <a href="jacket-specific.html?id=${product.id}">
+                                        <img class="product-img" src="${product.images[0].src}" alt="${product.name}" />
+                                        <h3>${product.name}</h3>
+                                        <p class="price">$${product.prices.price}</p>
+                                    </a>
+                                </div>
+                            `;
+                        });
+                    } else {
+                        container.innerHTML = "No products available";
+                    }
                 });
             } else {
-                container.innerHTML = "No products available";
+                categories.forEach(category => {
+                    const container = document.querySelector(`.${category.containerId}`);
+                    container.innerHTML = "No products available";
+                });
             }
 
             loader.style.display = "none";
         } catch (error) {
             console.error("Error fetching API data:", error);
-            container.innerHTML = "There seems to be a problem. Please try again later.";
+            categories.forEach(category => {
+                const container = document.querySelector(`.${category.containerId}`);
+                container.innerHTML = "There seems to be a problem. Please try again later.";
+            });
             loader.style.display = "none";
         }
     }
@@ -38,23 +50,12 @@ function callApi(containerId, apiUrl, startIdx, endIdx) {
     fetchData();
 }
 
-var mybutton = document.getElementById("backToTopBtn");
+const apiUrl = "https://cors.noroff.dev/http://rainydelrog.no/rainydays/wp-json/wc/store/products";
 
-        window.onscroll = function() {scrollFunction()};
+const categories = [
+    { containerId: "water-sports", startIdx: 0, endIdx: 3 },
+    { containerId: "outdoor", startIdx: 3, endIdx: 6 },
+    { containerId: "climbing", startIdx: 6, endIdx: 9 }
+];
 
-        function scrollFunction() {
-            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                mybutton.style.display = "block";
-            } else {
-                mybutton.style.display = "none";
-            }
-        }
-
-        function topFunction() {
-            document.body.scrollTop = 0;
-            document.documentElement.scrollTop = 0;
-}
-
-callApi("water-sports", "https://cors.noroff.dev/http://rainydelrog.no/rainydays/wp-json/wc/store/products", 0, 3);
-callApi("outdoor", "https://cors.noroff.dev/http://rainydelrog.no/rainydays/wp-json/wc/store/products", 3, 6);
-callApi("climbing", "https://cors.noroff.dev/http://rainydelrog.no/rainydays/wp-json/wc/store/products", 6, 9);
+callApi(categories, apiUrl);

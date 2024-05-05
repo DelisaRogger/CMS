@@ -24,7 +24,7 @@ async function populateGrid() {
 
                 const priceElement = document.createElement("p");
                 priceElement.classList.add("price");
-                priceElement.textContent = `${prices.price}`;
+                priceElement.textContent = `$${prices.price}`;
 
                 anchor.appendChild(img);
                 anchor.appendChild(titleElement);
