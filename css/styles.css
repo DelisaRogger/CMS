@@ -44,7 +44,7 @@ a {
 
 a:hover {
     color: darkgreen;
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 
@@ -412,15 +412,16 @@ grid-gap: 0;
     background-color: rgb(42, 12, 235);
     color: #ddd;
  }
+ #cta-purchase:hover { 
+    background-color: #ddd;
+    color: #000;
+ }
 
  .cta-continue {
     display: grid;
     grid-column: 1 / 3;
     margin: 25px;
     background-color:  #8AE9D8;
- }
- .cta-purchase:hover {
-    background-color: #ddd;
  }
 
 .shipping-form, .shipping-form input {
