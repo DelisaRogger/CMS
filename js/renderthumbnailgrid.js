@@ -10,7 +10,7 @@ async function populateGrid() {
                 const { id, images, name, prices } = item;
 
                 const thumbnail = document.createElement("div");
-                thumbnail.classList.add("product");
+                thumbnail.classList.add("product-box");
 
                 const anchor = document.createElement("a");
                 anchor.href = `jacket-specific.html?id=${id}`;
@@ -29,7 +29,6 @@ async function populateGrid() {
                 anchor.appendChild(img);
                 anchor.appendChild(titleElement);
                 anchor.appendChild(priceElement);
-
                 thumbnail.appendChild(anchor);
 
                 gridContainer.appendChild(thumbnail);
@@ -39,6 +38,7 @@ async function populateGrid() {
         }
     } catch (error) {
         console.error("Error fetching data:", error);
+        container.innerHTML = "There seems to be a problem. Please try again later.";
     }
 }
 
