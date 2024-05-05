@@ -219,7 +219,7 @@ nav ul {
 
 /* Jackets */
 
-.outdoor, .hiking, .climbing, .water-sports {
+.outdoor, .climbing, .water-sports {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     margin: 4em auto;
@@ -227,13 +227,13 @@ nav ul {
     grid-gap: 5px;
 }
 
-.outdoor h2, .outdoor p, .hiking h2, .hiking p, .climbing h2, .climbing p, .water-sports h2, .water-sports p {
+.outdoor h2, .outdoor p, .climbing h2, .climbing p, .water-sports h2, .water-sports p {
     grid-column: -1/ 1;
     margin: 3px;
     font-family: 'Inria Sans', sans-serif; 
 }
 
-.outdoor-title, .hiking-title, .climbing-title, .water-sports-title {
+.outdoor-title, .climbing-title, .water-sports-title {
     text-align: center;
     display: contents;
 }

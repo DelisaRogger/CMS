@@ -52,6 +52,7 @@ function createHtml(details) {
       </div>        
       <a href="check_out.html" class="cta cta-cart">Add to cart</a>
     `;
+
 }
 
 function createSizeOptions() {
