@@ -66,12 +66,12 @@ nav ul {
 }
 
 .grid-container {
-display: grid;
-grid-template-columns: repeat(3, 1fr);
-margin-bottom: 4.5em;
-margin: 2em 15%;
-max-width: 1000px;
-grid-gap: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-bottom: 4.5em;
+    margin: 2em 15%;
+    max-width: 1000px;
+    grid-gap: 0;
 }
 
 .sample {
@@ -252,7 +252,7 @@ grid-gap: 0;
 .product-box {
     border: 3px solid black;
     border-radius: 10px;
-    margin: 0 40px;
+    margin: 10px 40px;
     text-align: center;
     background-color: #fff;
 }
@@ -269,6 +269,7 @@ grid-gap: 0;
 
 .product-box:hover {
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.8);
+    background: rgb(209, 202, 202);
 }
 
 .line {
