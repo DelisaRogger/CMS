@@ -40,6 +40,10 @@ To get a copy of the website up and running on your local machine, follow these 
 
 Since this project is built with HTML, CSS, and JavaScript, no additional installation steps are required.
 
+### Prototype
+
+https://www.figma.com/file/HryWdvgY53K4AFZy5qThfZ/Rainydays?node-id=0%3A1&t=z35svJLAi7IjIuFE-1
+
 ### Running
 
 https://rainydelrog-cms.netlify.app/
